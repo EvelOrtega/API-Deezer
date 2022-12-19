@@ -1,0 +1,22 @@
+h4 {
+  font-size: 1.5rem;
+  color: #fdfffc;
+}
+.card {
+  width: 100px;
+  height: 30px;
+  border-radius: 12px;
+  text-align: center;
+  padding-bottom: 60px;
+  -webkit-box-shadow: 10px 10px 18px -8px rgba(253, 255, 252, 0.1);
+  -moz-box-shadow: 10px 10px 18px -8px rgba(253, 255, 252, 0.005);
+  box-shadow: 10px 10px 18px -8px rgba(253, 255, 252, 0.005);
+  margin: 10px;
+  transition: ease;
+  background-color: #2191fb;
+  padding: auto;
+}
+.card:hover {
+  transform: translateY(-5px);
+  transition: ease;
+}

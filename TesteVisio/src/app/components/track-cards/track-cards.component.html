@@ -1,0 +1,51 @@
+<form>
+  <input
+    class="light-bg-color barra-busca"
+    type="text"
+    name="campoBusca"
+    [(ngModel)]="campoBusca"
+    placeholder="Busca.."
+    required
+  />
+  <input (click)="searchBar()" type="submit" value=" " class="botao-lista" />
+</form>
+
+<h2 *ngIf="musicas.length == 0">Nenhum Resultado Encontrado :(</h2>
+<div *ngIf="musicas.length != 0">
+  <h2 *ngIf="search == 'Undefined'">As Mais do Momento!</h2>
+  <h2 *ngIf="search != 'Undefined'">As top com: "{{ search }}"</h2>
+  <div class="separator"></div>
+</div>
+
+<ul class="container">
+  <li class="pop-up" *ngFor="let musica of musicas">
+    <button (click)="addFavorite(musica)" class="favorite light-bg-color">
+      <strong>+</strong>
+    </button>
+    <a target="_blank" class="" routerLink="/detalhes/{{ musica.id }}">
+      <div class="card">
+        <img [src]="musica.album.cover_big" alt="" class="card" />
+        <div class="cover">
+          <h4>{{ musica.title_short }} - {{ musica.artist.name }}</h4>
+        </div>
+      </div>
+    </a>
+    <audio controls controlsList="nodownload">
+      <source [src]="musica.preview" />
+    </audio>
+  </li>
+</ul>
+
+<div *ngIf="musicas.length != 0">
+  <div class="button-box" *ngIf="search != 'Undefined'">
+    <div>
+      <button (click)="backBtn()"><h4>Voltar</h4></button>
+    </div>
+    <div>
+      <h4>{{ pagina }}</h4>
+    </div>
+    <div>
+      <button (click)="fowardBtn()"><h4>Avançar</h4></button>
+    </div>
+  </div>
+</div>

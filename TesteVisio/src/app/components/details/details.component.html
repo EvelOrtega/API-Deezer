@@ -1,0 +1,23 @@
+<section>
+  <div class="flexbox">
+    <div>
+      <img [src]="track.artist.picture_big" alt="" />
+    </div>
+    <div>
+      <h1>Título :{{ track.title }}</h1>
+      <h3>Album: {{ track.album.title }}</h3>
+      <h2>Artista: {{ track.artist.name }}</h2>
+      <h3>Duração: {{ this.pipeMinutes(track.duration) }}</h3>
+      <h3>Data de Lançamento: {{ pipeData(track.release_date) }}</h3>
+      <h4>bpm: {{ track.bpm }}, gain: {{ track.gain }}</h4>
+      <h3>Link da música no Deezer:</h3>
+      <a [href]="track.link">
+        <h4>{{ track.link }}</h4>
+      </a>
+      <h3>Link do Artista no Deezer</h3>
+      <a [href]="track.artist.link">
+        <h4>{{ track.artist.link }}</h4>
+      </a>
+    </div>
+  </div>
+</section>

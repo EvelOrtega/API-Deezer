@@ -1,0 +1,21 @@
+* {
+  list-style: none;
+}
+section {
+  margin-left: 90px;
+  overflow-x: hidden;
+}
+h2 {
+  margin-top: 20px;
+  color: #fdfffc;
+}
+.separator {
+  border-top: #fdfffc solid 2px;
+  width: 100px;
+}
+.container {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-color: #e94f37 #171614;
+  align-items: flex-start;
+}

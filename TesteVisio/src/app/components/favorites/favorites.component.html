@@ -1,0 +1,20 @@
+<section>
+  <h1>Meus Favoritos</h1>
+
+  <ul>
+    <li *ngFor="let favorite of favorites">
+      <a target="_blank" routerLink="/detalhes/{{ favorite.id }}"
+        ><div class="container">
+          <img [src]="favorite.artist.picture" alt="" srcset="" />
+          <div class="container-text">
+            <h3>{{ favorite.title }}</h3>
+            <h4>{{ favorite.artist.name }}</h4>
+            <h5>Album:{{ favorite.album.title }}</h5>
+            <audio controls controlsList="nodownload">
+              <source [src]="favorite.preview" />
+            </audio>
+          </div></div
+      ></a>
+    </li>
+  </ul>
+</section>
